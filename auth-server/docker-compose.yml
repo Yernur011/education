@@ -1,0 +1,49 @@
+services:
+
+  j-postgres:
+    image: postgres:15.3
+    container_name: postgres
+    ports:
+      - '5435:5432'
+    environment:
+      POSTGRES_PASSWORD: "user"
+      POSTGRES_USER: "user"
+      POSTGRES_DB: "j-sso"
+    restart: unless-stopped
+    volumes:
+      - ./docker/postgres/data:/var/lib/postgresql/data
+    networks:
+      - j-network
+  j-redis:
+    image: redis:7.2-rc2
+    restart: unless-stopped
+    command: redis-server --save 20 1 --loglevel warning --requirepass qwerty12345678
+    ports:
+      - '6379:6379'
+    networks:
+      - j-network
+
+
+
+#  app:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    container_name: auth-server
+#    environment:
+#      - POSTGRES_URL=jdbc:postgresql://j-postgres:5432/j-sso
+#      - REDIS_HOST=j-redis
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - j-postgres
+#      - j-redis
+#    networks:
+#      - j-network
+#    restart: unless-stopped
+networks:
+  j-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: "14.205.210.0/24"

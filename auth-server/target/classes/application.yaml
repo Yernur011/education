@@ -1,0 +1,134 @@
+management:
+    endpoints:
+        web:
+            exposure:
+                include: health,info
+server:
+    port: 8080
+springdoc:
+    swagger-ui:
+        enabled: true
+        use-root-path: true
+        path: /swagger-ui
+        doc-expansion: none
+        config-url: /v3/api-docs/swagger-config
+        disable-swagger-default-url: true
+        operationsSorter: method
+        tagsSorter: alpha
+        url: /v3/api-docs
+        try-it-out-enabled: true
+    api-docs:
+        enabled: true
+        path: /v3/api-docs
+
+spring:
+    application:
+        name: j-sso
+    mvc:
+        cors:
+            configs:
+                - pattern: /v3/api-docs
+                  allowed-origins: "http://localhost:7778"
+                  allowed-header: "*"
+                  exposed-headers: "*"
+                  allowed-methods: "*"
+                  allow-credentials: true
+                - pattern: /**
+                  allowed-origins: "http://127.0.0.1:8080,http://localhost:8080"
+                  allowed-header: "*"
+                  exposed-headers: "*"
+                  allowed-methods: "*"
+                  allow-credentials: true
+
+    session:
+        timeout: 1800                 # Время жизни сессии (в секундах)
+        redis:
+            flush-mode: on_save         # Указываем, когда изменения сеанса записываются в хранилище (immediate или on_save)
+            namespace: j-sso:session    # Пространство имен для ключей, используемых для хранения сессий.
+            save-mode: on_set_attribute # Определяет в какой момент происходит сохранение изменений сессии (on_set_attribute, on_get_attribute, always)
+    data:
+        redis: # Настраиваем подключение к Redis
+            client-type: lettuce        # Указываем тип клиента Redis (jedis или lettuce)
+            database: 0                 # Указываем номер БД Redis
+            host: ${REDIS_HOST:localhost}             # Хост подключения
+            port: 6379                  # Порт подключения
+            password: qwerty12345678    # Пароль подключения
+            lettuce: # Настраиваем пул подключений клиента lettuce
+                pool:
+                    max-active: 16          # Максимальное количество подключений в пуле
+                    max-idle: 8             # Минимальное количество "idle" подключений в пуле
+    #jdbc:redis://localhost:6379/0
+#    liquibase:
+#        enabled: true # ??????? true, ???? ?????????? ??????? ????? ???????? ?? ??? ??????? ??????????
+#        change-log: classpath:database/db.changelog.yaml
+#        contexts: prod, dev
+    flyway:
+        enabled: true
+        user: user
+        password: user
+        url: ${POSTGRES_URL:jdbc:postgresql://localhost:5435/j-sso}
+
+    datasource:
+        url: ${POSTGRES_URL:jdbc:postgresql://localhost:5435/j-sso}
+        username: "user"
+        password: "user"
+        driver-class-name: "org.postgresql.Driver"
+        hikari:
+            connection-timeout: 30000
+            maximum-pool-size: 10
+            minimum-idle: 10
+            initialization-fail-timeout: 1
+            leak-detection-threshold: 0
+            pool-name: "HikariPool-j-sso"
+            register-mbeans: true
+
+    security:
+        oauth2:
+            authorizationserver:
+                issuer-url: http://localhost:7777
+                introspection-endpoint: /oauth2/token-info
+                authorization-ttl: 720000
+                authorization-consent-ttl: 720000
+            client:
+                registration:
+                    github:
+                        clientId: Ov23lieU055k7Au3wz4b
+                        clientSecret: 3ef25e58f893c5bfa00c58120ab89f31a49127e3
+
+                    google:
+                        clientId: <your_google_client_id>
+                        clientSecret: <your_google_client_secret>
+
+                    yandex:
+                        provider: yandex
+                        clientId: <your_yandex_client_id>
+                        clientSecret: <your_yandex_client_secret>
+                        redirect-uri: http://localhost:7777/login/oauth2/code/yandex
+                        authorizationGrantType: authorization_code
+                        clientName: Yandex
+
+                provider:
+                    yandex:
+                        authorization-uri: https://oauth.yandex.ru/authorize
+                        token-uri: https://oauth.yandex.ru/token
+                        user-name-attribute: default_email
+                        userInfoUri: https://login.yandex.ru/info
+
+yandex-avatar-url: https://avatars.yandex.net/get-yapic/{avatarId}/islands-retina-50
+
+
+
+
+d-email:
+    email: tka99.ru@gmail.com
+    password: xpuw zxdb hqhu ntis
+    host: smtp.gmail.com
+    port: 587
+
+otp-store:
+    cookie-name: dl-sso-temporary-session
+    cookie-domain: ${REDIS_HOST:localhost}
+    cookie-max-age: 180
+
+
+
