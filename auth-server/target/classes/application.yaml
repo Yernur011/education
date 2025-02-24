@@ -66,10 +66,10 @@ spring:
         enabled: true
         user: user
         password: user
-        url: ${POSTGRES_URL:jdbc:postgresql://localhost:5435/j-sso}
+        url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/j-sso}
 
     datasource:
-        url: ${POSTGRES_URL:jdbc:postgresql://localhost:5435/j-sso}
+        url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/j-sso}
         username: "user"
         password: "user"
         driver-class-name: "org.postgresql.Driver"
@@ -85,7 +85,7 @@ spring:
     security:
         oauth2:
             authorizationserver:
-                issuer-url: http://localhost:7777
+                issuer-url: http://localhost:8080
                 introspection-endpoint: /oauth2/token-info
                 authorization-ttl: 720000
                 authorization-consent-ttl: 720000
