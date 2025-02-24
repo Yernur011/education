@@ -1,6 +1,6 @@
 package com.example.authserver.service.security.impl;
 
-import com.example.authserver.domain.type.AuthProvider;
+import com.example.authserver.domain.enums.auth.AuthProvider;
 import com.example.authserver.service.security.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

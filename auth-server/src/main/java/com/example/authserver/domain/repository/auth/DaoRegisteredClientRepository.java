@@ -1,4 +1,4 @@
-package com.example.authserver.domain.repository;
+package com.example.authserver.domain.repository.auth;
 import com.example.authserver.domain.entity.security.SystemOauth2Client;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;

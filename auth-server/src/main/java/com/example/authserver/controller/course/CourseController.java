@@ -1,6 +1,7 @@
 package com.example.authserver.controller.course;
 
-import com.example.authserver.domain.entity.edu.Course;
+import com.example.authserver.domain.dto.course.CoursesResponseDto;
+import com.example.authserver.service.crud.tests.CourseCrudService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,10 +15,11 @@ import static com.example.authserver.utils.codes.ProductCode.*;
 @RequestMapping(V1_URI + COURSE_URI)
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class CourseController {
+    private final CourseCrudService courseCrudService;
 
     @GetMapping
-    public ResponseEntity<List<Object>> getCourses(@RequestParam Long page, @RequestParam Long size) {
-        return ResponseEntity.ok(List.of());
+    public ResponseEntity<List<CoursesResponseDto>> getCourses(@RequestParam Long page, @RequestParam Long size) {
+        return ResponseEntity.ok(courseCrudService.findAll(page, size));
     }
 
     @GetMapping("/{id}")
@@ -31,12 +33,12 @@ public class CourseController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> createCourse(@RequestBody Course course) {
+    public ResponseEntity<Object> createCourse(@RequestBody Object course) {
         return ResponseEntity.ok(List.of());
     }
 
     @PutMapping
-    public ResponseEntity<Object> updateCourse(@RequestBody Course course) {
+    public ResponseEntity<Object> updateCourse(@RequestBody Object course) {
         return ResponseEntity.ok(List.of());
     }
 

@@ -1,4 +1,4 @@
-package com.example.authserver.domain.repository;
+package com.example.authserver.domain.repository.auth;
 
 import com.example.authserver.domain.entity.security.RoleEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

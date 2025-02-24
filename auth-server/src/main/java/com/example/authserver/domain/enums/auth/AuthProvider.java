@@ -1,4 +1,4 @@
-package com.example.authserver.domain.type;
+package com.example.authserver.domain.enums.auth;
 
 import java.util.stream.Stream;
 

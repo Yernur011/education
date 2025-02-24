@@ -3,7 +3,7 @@ package com.example.authserver.service.security;
 import com.example.authserver.domain.dto.auth.AuthorizedUser;
 import com.example.authserver.domain.dto.auth.RegistrationDto;
 import com.example.authserver.domain.entity.security.UserEntity;
-import com.example.authserver.domain.type.AuthProvider;
+import com.example.authserver.domain.enums.auth.AuthProvider;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.util.UUID;

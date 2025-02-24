@@ -4,7 +4,7 @@ import com.example.authserver.domain.dto.auth.AuthorizedUser;
 import com.example.authserver.domain.entity.security.AuthorityEntity;
 import com.example.authserver.domain.entity.security.RoleEntity;
 import com.example.authserver.domain.entity.security.UserEntity;
-import com.example.authserver.domain.type.AuthProvider;
+import com.example.authserver.domain.enums.auth.AuthProvider;
 import lombok.experimental.UtilityClass;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

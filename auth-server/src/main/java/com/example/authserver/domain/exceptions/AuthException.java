@@ -1,6 +1,6 @@
 package com.example.authserver.domain.exceptions;
 
-import com.example.authserver.domain.type.AuthErrorCode;
+import com.example.authserver.domain.enums.auth.AuthErrorCode;
 import lombok.Getter;
 
 import javax.security.sasl.AuthenticationException;

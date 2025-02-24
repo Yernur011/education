@@ -2,7 +2,7 @@ package com.example.authserver.service.security.impl;
 
 import com.example.authserver.domain.entity.security.UserEntity;
 import com.example.authserver.utils.mapper.AuthorizedUserMapper;
-import com.example.authserver.domain.repository.UserRepository;
+import com.example.authserver.domain.repository.auth.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -3,7 +3,7 @@ package com.example.authserver.service.security;
 import com.example.authserver.domain.dto.auth.AuthorizedUser;
 import com.example.authserver.domain.dto.auth.IntrospectionPrincipal;
 import com.example.authserver.domain.dto.auth.TokenInfoDto;
-import com.example.authserver.domain.type.SSOScope;
+import com.example.authserver.domain.enums.auth.SSOScope;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
