@@ -1,6 +1,8 @@
 package com.example.authserver.controller.course;
 
+import com.example.authserver.domain.dto.course.CourseDetailsDto;
 import com.example.authserver.domain.dto.course.CoursesResponseDto;
+import com.example.authserver.domain.entity.edu.Course;
 import com.example.authserver.service.crud.tests.CourseCrudService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +25,8 @@ public class CourseController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Object> getCourse(@PathVariable Long id) {
-        return ResponseEntity.ok(List.of());
+    public ResponseEntity<CourseDetailsDto> getCourse(@PathVariable Long id) {
+        return ResponseEntity.ok(courseCrudService.findById(id));
     }
 
     @GetMapping("/{id}" + USERS_URI)

@@ -2,6 +2,7 @@ package com.example.authserver.domain.entity.edu;
 
 import com.example.authserver.domain.entity.core.BusinessEntity;
 import com.example.authserver.domain.entity.image.Base64Images;
+import com.example.authserver.domain.entity.security.UserEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -26,5 +27,6 @@ public class Course extends BusinessEntity<Long> {
     List<Tags> tags = new ArrayList<>();
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH}, fetch = FetchType.LAZY)
     List<Lesson> lessons = new ArrayList<>();
-
+    @OneToMany(fetch = FetchType.LAZY)
+    List<UserEntity> users = new ArrayList<>();
 }

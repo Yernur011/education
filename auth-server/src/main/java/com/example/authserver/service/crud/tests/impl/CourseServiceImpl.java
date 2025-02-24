@@ -1,5 +1,6 @@
 package com.example.authserver.service.crud.tests.impl;
 
+import com.example.authserver.domain.dto.course.CourseDetailsDto;
 import com.example.authserver.domain.dto.course.CoursesResponseDto;
 import com.example.authserver.domain.entity.edu.Course;
 import com.example.authserver.domain.entity.edu.Tags;
@@ -29,6 +30,7 @@ public class CourseServiceImpl implements CourseCrudService {
                 .stream()
                 .map(course ->
                         new CoursesResponseDto(
+                                course.getId(),
                                 course.getBase64Images().getBase64Image(),
                                 course.getTags().stream().map(Tags::getName).toList(),
                                 course.getTitle(),
@@ -42,8 +44,18 @@ public class CourseServiceImpl implements CourseCrudService {
     }
 
     @Override
-    public Course findById(Long id) {
+    public CourseDetailsDto findById(Long id) {
         return courseRepository.findById(id)
+                .map(course ->
+                        new CourseDetailsDto(
+                                course.getId(),
+                                course.getTitle(),
+                                course.getDescription(),
+                                course.getBase64Images().getBase64Image(),
+                                course.getTags().stream().map(Tags::getName).toList(),
+                                course.getLessons()
+                        )
+                )
                 .orElseThrow(() -> new NoSuchElementException(COURSE_NOT_FOUND));
     }
 
