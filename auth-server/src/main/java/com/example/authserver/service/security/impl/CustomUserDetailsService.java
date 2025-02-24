@@ -1,6 +1,6 @@
 package com.example.authserver.service.security.impl;
 
-import com.example.authserver.domain.entity.UserEntity;
+import com.example.authserver.domain.entity.security.UserEntity;
 import com.example.authserver.utils.mapper.AuthorizedUserMapper;
 import com.example.authserver.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

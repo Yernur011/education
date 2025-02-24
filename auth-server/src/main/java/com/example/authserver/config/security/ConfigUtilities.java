@@ -1,7 +1,7 @@
 package com.example.authserver.config.security;
 
-import com.example.authserver.service.redis.RedisOAuth2AuthorizationConsentService;
-import com.example.authserver.service.redis.RedisOAuth2AuthorizationService;
+import com.example.authserver.service.security.redis.RedisOAuth2AuthorizationConsentService;
+import com.example.authserver.service.security.redis.RedisOAuth2AuthorizationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

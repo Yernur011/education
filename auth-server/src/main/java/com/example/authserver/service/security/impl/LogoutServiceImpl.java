@@ -1,6 +1,6 @@
 package com.example.authserver.service.security.impl;
 
-import com.example.authserver.service.auth.LogoutService;
+import com.example.authserver.service.security.auth.LogoutService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.server.authorization.OAuth2AuthorizationService;
 import org.springframework.security.oauth2.server.authorization.OAuth2TokenType;

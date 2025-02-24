@@ -1,6 +1,6 @@
 package com.example.authserver.domain.repository;
 
-import com.example.authserver.domain.entity.SystemOauth2Client;
+import com.example.authserver.domain.entity.security.SystemOauth2Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -2,7 +2,7 @@ package com.example.authserver.service.security.impl;
 
 import com.example.authserver.domain.dto.auth.AuthorizedUser;
 import com.example.authserver.domain.dto.auth.RegistrationDto;
-import com.example.authserver.domain.entity.UserEntity;
+import com.example.authserver.domain.entity.security.UserEntity;
 import com.example.authserver.domain.exceptions.AuthException;
 import com.example.authserver.service.security.UserService;
 import com.example.authserver.utils.mapper.AuthorizedUserMapper;

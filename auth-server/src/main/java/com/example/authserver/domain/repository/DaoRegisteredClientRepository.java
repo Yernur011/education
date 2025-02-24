@@ -1,5 +1,5 @@
 package com.example.authserver.domain.repository;
-import com.example.authserver.domain.entity.SystemOauth2Client;
+import com.example.authserver.domain.entity.security.SystemOauth2Client;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
 import org.springframework.security.oauth2.core.ClientAuthenticationMethod;

@@ -1,9 +1,9 @@
 package com.example.authserver.config;
 
-import com.example.authserver.service.otp.OTPStore;
-import com.example.authserver.service.otp.impl.RedisOTPStore;
-import com.example.authserver.service.redis.RedisRegistrationStore;
-import com.example.authserver.service.redis.RegistrationStore;
+import com.example.authserver.service.external.otp.OTPStore;
+import com.example.authserver.service.external.otp.impl.RedisOTPStore;
+import com.example.authserver.service.security.redis.RedisRegistrationStore;
+import com.example.authserver.service.security.redis.RegistrationStore;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

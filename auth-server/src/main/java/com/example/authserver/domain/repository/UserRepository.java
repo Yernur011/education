@@ -1,6 +1,6 @@
 package com.example.authserver.domain.repository;
 
-import com.example.authserver.domain.entity.UserEntity;
+import com.example.authserver.domain.entity.security.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

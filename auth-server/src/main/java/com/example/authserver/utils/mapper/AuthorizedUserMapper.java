@@ -1,9 +1,9 @@
 package com.example.authserver.utils.mapper;
 
 import com.example.authserver.domain.dto.auth.AuthorizedUser;
-import com.example.authserver.domain.entity.AuthorityEntity;
-import com.example.authserver.domain.entity.RoleEntity;
-import com.example.authserver.domain.entity.UserEntity;
+import com.example.authserver.domain.entity.security.AuthorityEntity;
+import com.example.authserver.domain.entity.security.RoleEntity;
+import com.example.authserver.domain.entity.security.UserEntity;
 import com.example.authserver.domain.type.AuthProvider;
 import lombok.experimental.UtilityClass;
 import org.springframework.security.core.GrantedAuthority;
