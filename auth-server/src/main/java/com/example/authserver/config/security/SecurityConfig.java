@@ -50,8 +50,8 @@ public class SecurityConfig {
                                 "/v3/api-docs/swagger-config",
                                 "registration/**",
                                 "/user-token/**",
-                                "/actuator/**",
-                                "/api/v1/**"
+                                "/actuator/**"
+//                                , "/api/v1/**"
                         ).permitAll()
                         .anyRequest().authenticated()
         );
