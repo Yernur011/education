@@ -51,7 +51,7 @@ public class SecurityConfig {
                                 "registration/**",
                                 "/user-token/**",
                                 "/actuator/**"
-//                                , "/api/v1/**"
+                                , "/api/v1/**"
                         ).permitAll()
                         .anyRequest().authenticated()
         );
