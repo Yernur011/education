@@ -28,7 +28,7 @@ spring:
         cors:
             configs:
                 - pattern: /v3/api-docs
-                  allowed-origins: "http://localhost:7778"
+                  allowed-origins: "http://localhost:8080"
                   allowed-header: "*"
                   exposed-headers: "*"
                   allowed-methods: "*"

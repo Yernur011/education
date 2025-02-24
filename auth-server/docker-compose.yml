@@ -32,7 +32,7 @@ services:
       - POSTGRES_URL=jdbc:postgresql://j-postgres:5432/j-sso
       - REDIS_HOST=j-redis
     ports:
-      - "8080:8080"
+      - "80:8080"
     depends_on:
       - j-postgres
       - j-redis
