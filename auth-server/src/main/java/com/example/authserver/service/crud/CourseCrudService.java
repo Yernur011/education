@@ -1,4 +1,4 @@
-package com.example.authserver.service.crud.tests;
+package com.example.authserver.service.crud;
 
 import com.example.authserver.domain.dto.course.CourseDetailsDto;
 import com.example.authserver.domain.dto.course.CoursesResponseDto;

@@ -14,4 +14,5 @@ public interface ProductCode {
     String MAIN_INFO_URI = "/main-info";
     String FORUMS_URI = "/forums";
     String USERS_URI = "/users";
+    String FINISH_URI = "/finish";
 }

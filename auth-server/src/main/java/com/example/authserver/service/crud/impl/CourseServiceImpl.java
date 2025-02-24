@@ -1,4 +1,4 @@
-package com.example.authserver.service.crud.tests.impl;
+package com.example.authserver.service.crud.impl;
 
 import com.example.authserver.domain.dto.course.CourseDetailsDto;
 import com.example.authserver.domain.dto.course.CoursesResponseDto;
@@ -6,7 +6,7 @@ import com.example.authserver.domain.entity.edu.Course;
 import com.example.authserver.domain.entity.edu.Tags;
 import com.example.authserver.domain.exceptions.busines.InvalidValueException;
 import com.example.authserver.domain.repository.edu.CourseRepository;
-import com.example.authserver.service.crud.tests.CourseCrudService;
+import com.example.authserver.service.crud.CourseCrudService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;

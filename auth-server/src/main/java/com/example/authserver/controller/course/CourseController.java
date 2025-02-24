@@ -2,8 +2,7 @@ package com.example.authserver.controller.course;
 
 import com.example.authserver.domain.dto.course.CourseDetailsDto;
 import com.example.authserver.domain.dto.course.CoursesResponseDto;
-import com.example.authserver.domain.entity.edu.Course;
-import com.example.authserver.service.crud.tests.CourseCrudService;
+import com.example.authserver.service.crud.CourseCrudService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -46,6 +45,7 @@ public class CourseController {
 
     @DeleteMapping
     public ResponseEntity<Void> deleteCourse(@RequestParam Long courseId) {
+        courseCrudService.deleteById(courseId);
         return ResponseEntity.ok().build();
     }
 
